@@ -7,30 +7,70 @@
 </head>
 <body>
 
-<h1>Dynamic Load Balancing in Multiprocessor Systems</h1>
+<div class="app">
 
-<div class="controls">
-    <label>Processors:</label>
-    <input type="number" id="processorCount" value="4" min="2">
+    <header class="header">
+        <h1>Dynamic Load Balancing Simulator</h1>
+        <p>Multiprocessor Runtime Workload Optimization</p>
+    </header>
 
-    <label>Speed:</label>
-    <input type="range" id="speed" min="300" max="2000" step="300" value="1000">
+    <section class="controls">
 
+        <div class="control-group">
+            <label>Number of Processors</label>
+            <input type="number" id="processorCount" value="4" min="2">
+        </div>
+
+        <div class="control-group">
+            <label>Simulation Speed</label>
+            <input type="range" id="speed" min="300" max="2000" step="300" value="1000">
+        </div>
+
+        <div class="control-group">
+            <label>Load Assignment</label>
+            <select id="loadMode">
+                <option value="random">Random</option>
+                <option value="manual">Manual</option>
+            </select>
+        </div>
+
+        <div class="button-group">
     <button onclick="initializeSystem()">Initialize</button>
     <button onclick="startBalancing()">Start Balancing</button>
+    <button class="reset" onclick="resetSystem()">Reset</button>
 </div>
 
-<div class="dashboard">
-    <div id="chart"></div>
 
-    <div class="info">
-        <h3>Algorithm Steps</h3>
-        <p id="step">System Initialized.</p>
+    </section>
 
-        <h3>Performance Metrics</h3>
-        <p>Average Load: <span id="avgLoad">-</span></p>
-        <p>Load Difference (Max–Min): <span id="diff">-</span></p>
-    </div>
+    <!-- Manual load input area -->
+    <section id="manualInputs" class="manual hidden"></section>
+
+    <section class="dashboard">
+
+        <div class="card chart-card">
+            <h3>Processor Load Distribution</h3>
+            <div id="chart"></div>
+        </div>
+
+        <div class="card info">
+            <h3>Algorithm Execution</h3>
+            <p id="step">System not initialized.</p>
+
+            <div class="metrics">
+                <div>
+                    <span>Average Load</span>
+                    <strong id="avgLoad">-</strong>
+                </div>
+                <div>
+                    <span>Load Difference</span>
+                    <strong id="diff">-</strong>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
 </div>
 
 <script src="script.js"></script>
