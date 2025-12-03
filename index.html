@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Load Balancing Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Dynamic Load Balancing in Multiprocessor Systems</h1>
+
+<div class="controls">
+    <label>Processors:</label>
+    <input type="number" id="processorCount" value="4" min="2">
+
+    <label>Speed:</label>
+    <input type="range" id="speed" min="300" max="2000" step="300" value="1000">
+
+    <button onclick="initializeSystem()">Initialize</button>
+    <button onclick="startBalancing()">Start Balancing</button>
+</div>
+
+<div class="dashboard">
+    <div id="chart"></div>
+
+    <div class="info">
+        <h3>Algorithm Steps</h3>
+        <p id="step">System Initialized.</p>
+
+        <h3>Performance Metrics</h3>
+        <p>Average Load: <span id="avgLoad">-</span></p>
+        <p>Load Difference (Max–Min): <span id="diff">-</span></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

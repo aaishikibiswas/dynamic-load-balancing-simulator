@@ -1,0 +1,71 @@
+body {
+    background: #020617;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+h1 {
+    color: #38bdf8;
+}
+
+.controls {
+    margin: 20px;
+}
+
+button {
+    padding: 8px 14px;
+    margin: 5px;
+    background: #22c55e;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+#chart {
+    display: flex;
+    align-items: flex-end;
+    height: 260px;
+}
+
+.bar {
+    width: 60px;
+    margin: 0 10px;
+    background: #38bdf8;
+    transition: height 0.6s;
+    border-radius: 6px;
+}
+
+.overloaded {
+    background: #ef4444;
+}
+
+.underloaded {
+    background: #22c55e;
+}
+
+.bar span {
+    display: block;
+    margin-top: -25px;
+    font-weight: bold;
+}
+
+.info {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    width: 280px;
+    text-align: left;
+}
+
+.info h3 {
+    color: #facc15;
+}
